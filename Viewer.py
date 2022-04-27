@@ -41,6 +41,14 @@ def main():
                     exit()
                 elif choice.lower() == "y":
                     continue
+              else:
+                  print("Customer", customerID, "does not exist")
+                  choice = input("\nWould you like to continue? y/n: ")
+                  if choice.lower() == "n":
+                      exit()
+                  elif choice.lower() == "y":
+                      break
+
         except ValueError:
             print("Customer", customerID, "does not exist")
             choice = input("\nWould you like to continue? y/n: ")
