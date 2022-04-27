@@ -26,29 +26,28 @@ def main():
     list_of_customers = []
     list_of_customers = show_list(list_of_customers)
 
-    try:
-        while True:
+    while True:
+        try:
             customerID = int(input("\nEnter Customer ID: "))
-
             for obj in list_of_customers:
-                if customerID == obj.cust_ID:
-                    print()
-                    print(obj.fname, obj.lname)
-                    print(obj.company)
-                    print(obj.street)
-                    print(obj.city, obj.state, obj.zipcode)
-                    choice = input("\nWould you like to continue? y/n: ")
-                    if choice.lower() == "n":
-                        exit()
-                    elif choice.lower() == "y":
-                        continue
-    except ValueError:
-        print("Customer", customerID, "does not exist")
-        choice = input("\nWould you like to continue? y/n: ")
-        if choice.lower() == "n":
-            exit()
-        elif choice.lower() == "y":
-            customerID = int(input("\nEnter Customer ID: "))
+              if customerID == obj.cust_ID:
+                print()
+                print(obj.fname, obj.lname)
+                print(obj.company)
+                print(obj.street)
+                print(obj.city, obj.state, obj.zipcode)
+                choice = input("\nWould you like to continue? y/n: ")
+                if choice.lower() == "n":
+                    exit()
+                elif choice.lower() == "y":
+                    continue
+        except ValueError:
+            print("Customer", customerID, "does not exist")
+            choice = input("\nWould you like to continue? y/n: ")
+            if choice.lower() == "n":
+                exit()
+            elif choice.lower() == "y":
+                continue
 
 
 if __name__ == "__main__":
